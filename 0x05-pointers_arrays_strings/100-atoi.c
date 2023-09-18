@@ -29,12 +29,12 @@ int _atoi(char *s)
 		if (result > (2147483647 - (s[i] - '0')) / 10)
 		{
 			if (sign == 1)
-				return 2147483647;
+				return (2147483647);
 			else
-				return -2147483648;
+				return (-2147483648);
 		}
 		result = result * 10 + (s[i] - '0');
 		i++;
 	}
-	return result * sign;
+	return (result * sign);
 }
