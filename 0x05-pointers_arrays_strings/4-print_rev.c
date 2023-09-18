@@ -4,12 +4,12 @@
  * print_rev - Prints a string in reverse followed by a new line.
  * @s: Pointer to the string to be printed in reverse.
  */
+int _putchar(char *s)
+{
+	return write(1, &c, 1)
+}
 void print_rev(char *s)
 {
-	int _putchar(char c)
-	{
-		return write(1, &c, 1)
-	}
 	int length = 0;
 	int i;
 
