@@ -9,6 +9,7 @@ int _atoi(char *s)
 	int result = 0;
 	int sign = 1;
 	int i = 0;
+	int digit_found = 0;
 
 	while (s[i] == ' ')
 	{
