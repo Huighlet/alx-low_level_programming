@@ -4,7 +4,7 @@
  * @s: Pointer to the string.
  * Return: the length of the string (excluding the null terminator).
  */
-int -strlen(char *s)
+int _strlen(char *s)
 { 
 	int length = 0;
 
