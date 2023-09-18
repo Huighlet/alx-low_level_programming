@@ -12,7 +12,7 @@ int _strlen(char *s)
 	{
 	length++;
 	}
-	return length;
+	return (length);
 }
 /**
  * rev_string - Reverses a string.
