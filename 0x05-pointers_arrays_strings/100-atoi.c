@@ -36,5 +36,13 @@ int _atoi(char *s)
 		result = result * 10 + (s[i] - '0');
 		i++;
 	}
+	if (i == 0)
+	{
+		return 0;
+	}
+	if (!digit_found)
+	{
+		return 0;
+	}!
 	return (result * sign);
 }
