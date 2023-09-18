@@ -43,6 +43,6 @@ int _atoi(char *s)
 	if (!digit_found)
 	{
 		return 0;
-	}!
+	}
 	return (result * sign);
 }
