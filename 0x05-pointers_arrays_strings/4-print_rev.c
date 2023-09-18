@@ -6,6 +6,10 @@
  */
 void print_rev(char *s)
 {
+	int _putchar(char c)
+	{
+		return write(1, &c, 1)
+	}
 	int length = 0;
 	int i;
 
