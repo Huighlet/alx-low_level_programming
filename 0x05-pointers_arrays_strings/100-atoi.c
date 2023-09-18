@@ -35,6 +35,7 @@ int _atoi(char *s)
 		}
 		result = result * 10 + (s[i] - '0');
 		i++;
+		digit_found = 1;
 	}
 	if (i == 0)
 	{
