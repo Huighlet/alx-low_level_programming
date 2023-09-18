@@ -10,13 +10,12 @@ int _strlen(char *s)
 
 	while (s[length] != '\0')
 	{
-		length++;
+	length++;
 	}
-
 	return length;
 }
 /**
- * rev_string - Reverses a string. 
+ * rev_string - Reverses a string.
  * @s: pointer to the string to be reversed
  */
 void rev_string(char *s)
