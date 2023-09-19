@@ -10,17 +10,19 @@ char random_char() {
 		return '0' (rand() % 10);
 	}
 }
+
 int main() {
 	srand(time(NULL));
 	
-	int password_length =12;
+	int password_length = 12;
 
 	printf("Random Password: ");
-	for (int i = 0; i < password_length; i++) {
+	int i;
+	for (i = 0; i < password_length; i++) {
 		char random_character = random_char();
 		putchar(random_character);
 	}
 	printf("\n");
 
-	return (0);
+	return 0;
 }
