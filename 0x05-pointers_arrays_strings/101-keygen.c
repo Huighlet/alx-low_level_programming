@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-//Function to generate a randon character 
+ 
 char random_char() {
 	int random_type = rand() % 2;
 	if (random_type == 0) {
