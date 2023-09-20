@@ -12,7 +12,7 @@ char random_char() {
 }
 
 int main() {
-	int password_length = 12;
+	int password_length = 15;
 	int i;
 
 	srand(time(NULL));
