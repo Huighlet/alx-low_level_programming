@@ -7,7 +7,7 @@ char random_char() {
 	if (random_type == 0) {
 		return 'a' + (rand() % 26);
 	} else {
-		return '0' (rand() % 10);
+		return '0' + (rand() % 10);
 	}
 }
 
