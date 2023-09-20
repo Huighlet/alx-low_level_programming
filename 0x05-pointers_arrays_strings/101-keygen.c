@@ -12,12 +12,12 @@ char random_char() {
 }
 
 int main() {
-	srand(time(NULL));
-	
 	int password_length = 12;
+	int i;
+
+	srand(time(NULL));
 
 	printf("Random Password: ");
-	int i;
 	for (i = 0; i < password_length; i++) {
 		char random_character = random_char();
 		putchar(random_character);
