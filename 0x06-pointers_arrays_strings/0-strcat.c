@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  *_strcat - Concatenates two strings.
  * @dest: The destination string.
@@ -24,5 +23,5 @@ char *_strcat(char *dest, char *src)
 	/* Null-terminate the concatenated string */
 	*dest = '\0';
 
-	return result; /* Return a pointer to the beginning of the concatenated string */
+	return (result); /* Return a pointer to the beginning of the concatenated string */
 }
