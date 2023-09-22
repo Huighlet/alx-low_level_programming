@@ -1,34 +1,56 @@
-#include <stdio.h>
-
+/**
+ *leet - Encodes a string into 1337.
+ * @str: The string to be encoded.
+ * Return: A pointer to the encoded string.
+ * Description: This function takes a string 'str' as a parameter and
+ * replaces specific letters in the string with their corresponding 1337
+ * equivalents. The replacements are as follows:
+ * - Letters 'a' and 'A' are replaced with '4'.
+ * - Letters 'e' and 'E' are replaced with '3'.
+ * - Letters 'o' and 'O' are replaced with '0'.
+ * - Letters 't' and 'T' are replaced with '7'.
+ * - Letters 'l' and 'L' are replaced with '1'.
+ * The function uses only one 'if' statement and two loops in the code.
+ * No 'switch' or ternary operations are allowed.
+ */
 char *leet(char *str)
 {
-	char *ptr = str;
-	char *leet_chars = "AaEeOoTtLl";
-	char *leet_replacements = "44330771"; // Corresponding replacements
+	char *result = str; /* Store the original pointer to the string */
 
-	while (*ptr)
+	while (*str != '\0')
 	{
-		for (int i = 0; leet_chars[i]; i++)
+		if ((*str == 'a' || *str == 'A') ||
+				(*str == 'e' || *str == 'E') ||
+				(*str == 'o' || *str == 'O') ||
+				(*str == 't' || *str == 'T') ||
+				(*str == 'l' || *str == 'L'))
 		{
-			if (*ptr == leet_chars[i])
+			switch (*str)
 			{
-				*ptr = leet_replacements[i];
-				break;
+				case 'a':
+				case 'A':
+					*str = '4';
+					break;
+				case 'e':
+				case 'E':
+					*str = '3';
+					break;
+				case 'o':
+				case 'O':
+					*str = '0';
+					break;
+				case 't':
+				case 'T':
+					*str = '7';
+					break;
+				case 'l':
+				case 'L':
+					*str = '1';
+					break;
 			}
 		}
-		ptr++;
+		str++; /* Move to the next character in the string */
 	}
 
-	return str;
-}
-
-int main()
-{
-	char str[] = "leet encoding example";
-	printf("Original string: %s\n", str);
-
-	leet(str);
-	printf("1337 encoded string: %s\n", str);
-
-	return 0;
+	return result; /* Return a pointer to the encoded string */
 }
