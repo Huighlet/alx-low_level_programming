@@ -13,17 +13,11 @@ char *rot13(char *str)
 
 	while (*str)
 	{
-		char is_lower = (*str >= 'a' && *str <= 'z');
-		char is_upper = (*str >= 'A' && *str <= 'Z');
-		char shift = (is_lower || is_upper) ? 13 : 0;
-
-		if (is_lower && (*str + shift) > 'z')
-			*str = *str - 13;
-		else if (is_upper && (*str + shift) > 'Z')
-			*str = *str - 13;
-
-		*str += shift;
-
+		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
+		{
+			char base = (*str >= 'a' && *str <= 'z') ? 'a' : 'A';
+			*str = (*str - base + 13) % 26 + base;
+		}
 		str++;
 	}
 
