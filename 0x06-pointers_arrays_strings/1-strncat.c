@@ -1,36 +1,31 @@
-#include <stdio.h>
-
-char *_strncat(char *dest, const char *src, int n)
+/**
+ * _strncat - Concatenates two strings with a specified limit.
+ * @dest: The destination string.
+ * @src: The source string to append to dest.
+ * @n: The maximum number of bytes to copy from src.
+ * Return: A pointer to the resulting concatenated string (dest).
+ */
+char *_strncat(char *dest, char *src, int n)
 {
-	char *original_dest = dest;
+	char *result = dest; /* Store the original pointer to dest */
 
-	while (*dest)
+	/* Move dest pointer to the end of the destination string */
+	while (*dest != '\0')
 	{
 		dest++;
 	}
 
-	while (*src && n > 0)
+	/* Copy characters from src to dest, up to n bytes or until src ends */
+	while (*src != '\0' && n > 0)
 	{
-		*dest++ = *src++;
+		*dest = *src;
+		dest++;
+		src++;
 		n--;
 	}
 
-	if (n > 0)
-	{
-		*dest = '\0';
-	}
+	/* Null-terminate the concatenated string */
+	*dest = '\0';
 
-	return original_dest;
-}
-
-int main()
-{
-	char dest[50] = "Hello, ";
-	const char src[] = "world!";
-
-	_strncat(dest, src, 3);
-
-	printf("Concatenated string: %s\n", dest);
-
-	return 0;
+	return result; /* Return a pointer to the beginning of the concatenated string */
 }
