@@ -1,53 +1,41 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <ctype.h>
-
-bool is_separator(char c)
-{
-	char separators[] = " \t\n,;.!?\"(){}";
-	for (int i = 0; separators[i]; i++)
-	{
-		if (c == separators[i])
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
+/**
+ * cap_string - Capitalizes all words in a string.
+ *  @str: The string to be modified.
+ *  Return: A pointer to the modified string.
+ *  Description: This function takes a string 'str' as a parameter and
+ *  capitalizes the first letter of each word in the string.
+ *  Words are separated by the following characters: space, tab, newline,
+ *  comma, semicolon, period, exclamation mark, question mark, double quote,
+ *  opening parenthesis, closing parenthesis, and opening curly brace.
+ */
 char *cap_string(char *str)
 {
-	bool new_word = true;
+	char *result = str; /* Store the original pointer to the string */
+	int capitalize_next = 1; /* Flag to indicate whether the next character should be capitalized */
 
-	for (int i = 0; str[i] != '\0'; i++)
+	while (*str != '\0')
 	{
-		if (is_separator(str[i]))
+		if (capitalize_next && (*str >= 'a' && *str <= 'z'))
 		{
-			new_word = true;
+			/* Capitalize the first letter of the word */
+			*str = *str - 'a' + 'A';
+			capitalize_next = 0;
 		}
-		else if (new_word && isalpha(str[i]))
+		else if (*str == ' ' || *str == '\t' || *str == '\n' || *str == ',' ||
+				*str == ';' || *str == '.' || *str == '!' || *str == '?' || *str == '"' ||
+				*str == '(' || *str == ')' || *str == '{')
 		{
-			str[i] = toupper(str[i]);
-			new_word = false;
+			/* Set the flag to capitalize the next character */
+			capitalize_next = 1;
 		}
 		else
 		{
-			new_word = false;
+			/* Clear the flag for other characters */
+			capitalize_next = 0;
 		}
+
+		str++; /* Move to the next character in the string */
 	}
 
-	return str;
-}
-
-int main()
-{
-	char str[] = "hello, world! this is a test string.";
-
-	printf("Original string: %s\n", str);
-
-	cap_string(str);
-
-	printf("Capitalized string: %s\n", str);
-
-	return 0;
+	return result; /* Return a pointer to the modified string */
 }
