@@ -15,42 +15,23 @@
  */
 char *leet(char *str)
 {
-	char *result = str; /* Store the original pointer to the string */
+	char *result = str;
 
 	while (*str != '\0')
 	{
-		if ((*str == 'a' || *str == 'A') ||
-				(*str == 'e' || *str == 'E') ||
-				(*str == 'o' || *str == 'O') ||
-				(*str == 't' || *str == 'T') ||
-				(*str == 'l' || *str == 'L'))
-		{
-			switch (*str)
-			{
-				case 'a':
-				case 'A':
-					*str = '4';
-					break;
-				case 'e':
-				case 'E':
-					*str = '3';
-					break;
-				case 'o':
-				case 'O':
-					*str = '0';
-					break;
-				case 't':
-				case 'T':
-					*str = '7';
-					break;
-				case 'l':
-				case 'L':
-					*str = '1';
-					break;
-			}
-		}
-		str++; /* Move to the next character in the string */
+		if (*str == 'a' || *str == 'A')
+			*str = '4';
+		else if (*str == 'e' || *str == 'E')
+			*str = '3';
+		else if (*str == 'o' || *str == 'O')
+			*str = '0';
+		else if (*str == 't' || *str == 'T')
+			*str = '7';
+		else if (*str == 'l' || *str == 'L')
+			*str = '1';
+
+		str++;
 	}
 
-	return result; /* Return a pointer to the encoded string */
+	return result;
 }
