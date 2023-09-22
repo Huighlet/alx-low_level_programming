@@ -3,11 +3,11 @@
  * @str: The string to be modified.
  * Return: A pointer to the modified string.
  * Description: This function takes a string 'str' as a parameter and
- * changes all lowercase letters in the string to uppercase
+ * changes all lowercase letters in the string to uppercase.
  */
 char *string_toupper(char *str)
 {
-	char *result = str; // Store the original pointer to the string
+	char *result = str; /* Store the original pointer to the string */
 
 	while (*str != '\0')
 	{
@@ -16,8 +16,8 @@ char *string_toupper(char *str)
 			/* Convert lowercase letters to uppercase */
 			*str = *str - 'a' + 'A';
 		}
-		str++; // Move to the next character in the string
+		str++; /* Move to the next character in the string */
 	}
 
-	return result; // Return a pointer to the modified string
+	return result; /* Return a pointer to the modified string */
 }
