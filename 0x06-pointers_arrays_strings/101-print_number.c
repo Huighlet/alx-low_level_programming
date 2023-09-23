@@ -1,22 +1,25 @@
 #include "main.h"
 
 /**
- * print_number - Prints an integer.
- * @n: The integer to be printed.
- * Description: This function takes an integer 'n' as a parameter and
- * prints it to the standard output using only the _putchar function.
- * It does not use long, arrays, pointers or hard-coded special values.
+ * print_number - print numbers chars
+ * @n: integer params
+ * Return: 0
  */
 void print_number(int n)
 {
+	unsigned int n1;
+
+	n1 = n;
+
 	if (n < 0)
 	{
-		_putchar('-'); /* Print the minus sign for negative numbers */
-		n = -n; /* Make 'n' positive for easier printing */
+		_putchar('-');
+		n1 = -n;
 	}
 
-	if (n / 10 != 0)
-		print_number(n / 10); /* Recursively print the digits before the last one */
-
-	_putchar((n % 10) + '0'); /* Print the last digit as a character */
+	if (n1 / 10 != 0)
+	{
+		print_number(n1 / 10);
+	}
+	_putchar((n1 % 10) + '0');
 }
