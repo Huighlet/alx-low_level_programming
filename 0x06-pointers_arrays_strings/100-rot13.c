@@ -1,25 +1,28 @@
+#include "main.h"
+#include <stdio.h>
+
 /**
- *  rot13 - Encodes a string using ROT13.
- *  @str: The string to be encoded.
- *  Return: A pointer to the encoded string.
- *  Description: This function takes a string 'str' as a parameter and
- *  encodes it using the ROT13 algorithm, which shifts each letter by 13
- *  positions in the alphabet. The function uses two loops and only one 'if'
- *  statement in the code, without using 'switch' or ternary operations.
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ * Return: *s
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	char *result = str;
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*str)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
+		for (j = 0; j < 52; j++)
 		{
-			char base = (*str >= 'a' && *str <= 'z') ? 'a' : 'A';
-			*str = (*str - base + 13) % 26 + base;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
-		str++;
 	}
-
-	return (result);
+	return (s);
 }
