@@ -13,9 +13,10 @@ int main(void)
 	p = a;
 
 	/* Add one line of code here */
-	*(p + 2) = 98;
-
-	printf("a[2] = %d\n", a[2]);
+	int result = *(p + 2);
+	write(1, "a[2] = ", 7);
+	write(1, &result, 1);
+	write(1, "\n", 1);
 
 	return (0);
 }
