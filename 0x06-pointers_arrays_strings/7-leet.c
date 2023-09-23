@@ -33,5 +33,5 @@ char *leet(char *str)
 		str++;
 	}
 
-	return result;
+	return (result);
 }

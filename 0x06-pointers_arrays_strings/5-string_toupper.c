@@ -19,5 +19,5 @@ char *string_toupper(char *str)
 		str++; /* Move to the next character in the string */
 	}
 
-	return result; /* Return a pointer to the modified string */
+	return (result); /* Return a pointer to the modified string */
 }

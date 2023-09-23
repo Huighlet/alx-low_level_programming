@@ -1,60 +1,49 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * print_buffer - Prints the content of a buffer in a specified format.
- * @b: The buffer to be printed.
- * @size: The size of the buffer.
- * Description: This function prints the content of 'size' bytes of the buffer 'b'
- * in a specific format. Each line shows the position of the first byte in hexadecimal,
- * followed by the hexadecimal content (2 bytes at a time), and then the character
- * representation of the bytes. Lines are formatted with 10 bytes per line.
+ * print_buffer - prints buffer
+ * @b: buffer
+ * @size: size
+ * Return: void
  */
 void print_buffer(char *b, int size)
 {
+	int o, j, i;
+
+	o = 0;
+
 	if (size <= 0)
 	{
 		printf("\n");
 		return;
 	}
-
-	int i, j;
-
-	for (i = 0; i < size; i += 10)
+	while (o < size)
 	{
-		printf("%08x: ", i);
-
-		for (j = 0; j < 10; j++)
+		j = size - o < 10 ? size - o : 10;
+		printf("%08x: ", o);
+		for (i = 0; i < 10; i++)
 		{
-			if (i + j < size)
-			{
-				printf("%02x", b[i + j]);
-			}
+			if (i < j)
+				printf("%02x", *(b + o + i));
 			else
-			{
 				printf("  ");
-			}
-
-			if (j % 2 == 1)
+			if (i % 2)
 			{
 				printf(" ");
 			}
 		}
-
-		for (j = 0; j < 10; j++)
+		for (i = 0; i < j; i++)
 		{
-			if (i + j < size)
-			{
-				if (b[i + j] >= 32 && b[i + j] <= 126)
-				{
-					printf("%c", b[i + j]);
-				}
-				else
-				{
-					printf(".");
-				}
-			}
-		}
+			int c = *(b + o + i);
 
+			if (c < 32 || c > 132)
+			{
+				c = '.';
+			}
+			printf("%c", c);
+		}
 		printf("\n");
+		o += 10;
 	}
 }

@@ -11,7 +11,7 @@
 char *cap_string(char *str)
 {
 	char *result = str; /* Store the original pointer to the string */
-	int capitalize_next = 1; /* Flag to indicate whether the next character should be capitalized */
+	int capitalize_next = 1;
 
 	while (*str != '\0')
 	{
@@ -37,5 +37,5 @@ char *cap_string(char *str)
 		str++; /* Move to the next character in the string */
 	}
 
-	return result; /* Return a pointer to the modified string */
+	return (result); /* Return a pointer to the modified string */
 }

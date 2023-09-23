@@ -4,9 +4,9 @@
  * print_number - Prints an integer.
  * @n: The integer to be printed.
  * Description: This function takes an integer 'n' as a parameter and
- *      * prints it to the standard output using only the _putchar function.
- *       * It does not use long, arrays, pointers, or hard-coded special values.
- *        */
+ * prints it to the standard output using only the _putchar function.
+ * It does not use long, arrays, pointers or hard-coded special values.
+ */
 void print_number(int n)
 {
 	if (n < 0)

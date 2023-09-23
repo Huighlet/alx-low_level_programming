@@ -1,10 +1,9 @@
 /**
- * * _strcat - Concatenates two strings.
- * * @dest: The destination string.
- * * @src: The source string to append to dest.
- * *
- * * Return: A pointer to the resulting concatenated string (dest).
- * */
+ * _strcat - Concatenates two strings.
+ * @dest: The destination string.
+ * @src: The source string to append to dest.
+ * Return: A pointer to the resulting concatenated string (dest).
+ */
 char *_strcat(char *dest, char *src)
 {
 	char *result = dest; /* Store the original pointer to dest */
@@ -24,5 +23,5 @@ char *_strcat(char *dest, char *src)
 	/* Null-terminate the concatenated string */
 	*dest = '\0';
 
-	return result; /* Return a pointer to the beginning of the concatenated string */
+	return (result);
 }

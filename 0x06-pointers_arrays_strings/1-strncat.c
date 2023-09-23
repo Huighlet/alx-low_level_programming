@@ -27,5 +27,5 @@ char *_strncat(char *dest, char *src, int n)
 	/* Null-terminate the concatenated string */
 	*dest = '\0';
 
-	return result; /* Return a pointer to the beginning of the concatenated string */
+	return (result);
 }

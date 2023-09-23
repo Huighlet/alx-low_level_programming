@@ -14,6 +14,7 @@ void reverse_array(int *a, int n)
 	{
 		/* Swap elements at start and end positions */
 		int temp = a[start];
+
 		a[start] = a[end];
 		a[end] = temp;
 
